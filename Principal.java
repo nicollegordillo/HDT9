@@ -18,7 +18,7 @@ public class Principal {
             traduccion="";
             Palabras=l.leer();
             System.out.println("¿Qué Tree quiere usar?");
-            System.out.println("1. SplayTree \n2. AVLTree ");
+            System.out.println("1. SplayTree \n2. AVLTree \n3. Salir");
             tipo=teclado.nextInt();
             teclado.nextLine();
             if(tipo==1|| tipo==2){
@@ -32,9 +32,9 @@ public class Principal {
                     if (sentence1.endsWith(".")) {
                         sentence1 = sentence1.substring(0, sentence1.length() - 1);
                     }
-                    String[] words = sentence1.toLowerCase().split(" ");
+                    String[] words = sentence1.split(" ");
                     for(int i=0;i<words.length;i++){
-                        if(Arbol.get(words[i])==null){
+                        if(Arbol.get(words[i].toLowerCase())==null){
                             traduccion+="*"+words[i]+"* ";
                         }
                         else{
@@ -43,6 +43,9 @@ public class Principal {
                     }
                     System.out.println(traduccion);
                 }
+            }
+            else if(tipo==3){
+                continuar=false;
             }
             else{
                 System.out.println("Ingrese algo válido");

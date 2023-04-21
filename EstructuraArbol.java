@@ -1,10 +1,10 @@
-public interface EstructuraArbol<T> {
+public interface EstructuraArbol<K,V> {
 
-	public void add (T value);
+	public void add (K key,V value);
 	
-	public T get (T key);
+	public V get (K key);
 	
-	public T remove (T key);
+	public V remove (K key);
 	
 	public int count ();
 	
